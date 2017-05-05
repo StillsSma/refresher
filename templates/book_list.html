@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<div class="container">
+  <a href="{% url 'index_view' %}">back</a>
+</div>
+
+<div class="container">
+  <h1>Book List</h1>
+</div>
+
+<div class="container">
+  <table class="table">
+    <tr>
+
+    <th>Title</th>
+    <th>Author</th>
+    <th>Pages</th>
+    <th>Rating</th>
+      </tr>
+  {% for book in books %}
+  <tr>
+    <td>{{book.name}}</td>
+    <td>{{book.author}}</td>
+    <td>{{book.pages_but_its_divided_by_ten}}</td>
+    <td>{{book.rating}}</td>
+  </tr>
+  {% endfor %}
+  </table>
+</div>
+
+{% endblock %}
